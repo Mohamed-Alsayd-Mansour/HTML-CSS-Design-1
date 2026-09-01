@@ -1,8 +1,38 @@
 /* Start Variables */
 :root {
   --main-color: #10cab7;
+  --secondry-color: #2c4854;
 }
 /* End Variables */
+
+/* Start Componants */
+.special-heading {
+  font-size: 100px;
+  font-weight: 800;
+  color: #ebeced;
+  margin: 0;
+  letter-spacing: -3px;
+  text-align: center;
+}
+
+.special-heading + p {
+  font-size: 20px;
+  margin: -30px 0 0;
+  text-align: center;
+  color: #242424;
+}
+
+@media (max-width: 768px) {
+  .special-heading {
+    font-size: 60px;
+  }
+
+  .special-heading + p {
+    font-size: 13px;
+    margin: -20px 0 0;
+  }
+}
+/* End Componants */
 
 /* Start Gloale Rules */
 * {
@@ -47,6 +77,11 @@ body {
 /* Start Header */
 .header {
   padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
 }
 
 .header .container {
@@ -168,3 +203,127 @@ body {
   line-height: 1.7;
 }
 /* End Landing Section */
+
+/* Start Features */
+.feature {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: #f6f6f6;
+}
+
+.feature .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 20px;
+}
+
+.feature .container .feat {
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid transparent;
+  border-right: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.feature .container .feat:hover {
+  border-bottom: 2px solid #ddd;
+  border-right: 2px solid #ddd;
+}
+
+.feature .container .feat i {
+  color: var(--main-color);
+}
+
+.feature .container .feat  h3 {
+  font-weight: 800;
+  margin: 30px 0;
+}
+
+.feature .container .feat  p {
+  line-height: 1.7;
+  font-size: 15px;
+  color: #555;
+  font-weight: 400;
+}
+/* End Features */
+
+/* Start Services Section */
+.services .services-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 30px;
+  margin-top: 40px;
+}
+
+.services .services-content .col:first-child {
+  margin-left: 15px;
+}
+
+.services .services-content .col .srv {
+  margin-bottom: 40px;
+  display: flex;
+  border-bottom: 2px solid transparent;
+  transition: 0.3s;
+}
+
+.services .services-content .col .srv:hover {
+  border-bottom: 2px solid #ddd;
+}
+
+.services .services-content .col .srv:hover .text p{
+  color: var(--secondry-color);
+  padding-top: 2px;
+}
+
+@media (max-width: 768px) {
+  .services .services-content .col .srv {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.services .services-content .col .srv i {
+  color: var(--main-color);
+  flex-basis: 60px;
+}
+
+.services .services-content .col .srv .text {
+  flex: 1;
+}
+
+.services .services-content .col .srv .text h3{
+  margin: 0 0 20px;
+}
+
+.services .services-content .col .srv .text p{
+  line-height: 1.7;
+  color: #444;
+  font-weight: 300;
+}
+
+.services .services-content .col .image{
+  text-align: center;
+  position: relative;
+}
+
+.services .services-content .col .image::before{
+  content: '';
+  position: absolute;
+  background-color: var(--secondry-color);
+  width: 80px;
+  height: calc(100% + 80px);
+  top: -40px;
+  right: 20px;
+  z-index: -1;
+}
+
+.services .services-content .col img{
+  width: 260px;
+}
+
+@media (max-width: 1199px) {
+  .services .services-content .col .image{
+    display: none;
+  }
+}
+/* End Services Section */
